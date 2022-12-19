@@ -1,0 +1,50 @@
+Binary to decimal
+
+Given a binary number as an integer N, convert it into decimal and print.
+Input format :
+An integer N in the Binary Format
+Output format :
+Corresponding Decimal number (as integer)
+Constraints :
+0 <= N <= 10^9
+Sample Input 1 :
+1100
+Sample Output 1 :
+12
+Sample Input 2 :
+111
+Sample Output 2 :
+7
+
+----------------------------------
+import java.util.Scanner;
+public class Main {
+	static int bd(int n)
+	{
+		int num = n;
+		int dec_value = 0;
+
+		int base = 1;
+
+		int temp = num;
+		while (temp > 0) {
+			int last_digit = temp % 10;
+			temp = temp / 10;
+
+			dec_value += last_digit * base;
+
+			base = base * 2;
+		}
+
+		return dec_value;
+	}
+
+
+	public static void main(String[] args)
+	{
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+		System.out.println(bd(num));
+	}
+}
+
